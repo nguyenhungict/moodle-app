@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "408142660461",
+    "project_id": "moodle-app-58973",
+    "storage_bucket": "moodle-app-58973.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408142660461:android:e8f038be6b005f64a61064",
+        "android_client_info": {
+          "package_name": "vn.edu.usth.moodleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH5EFWWHu677ryDKMkN7ERuUiySpmCvFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

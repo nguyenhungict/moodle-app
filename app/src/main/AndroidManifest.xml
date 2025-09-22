@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoodleApp">
         <activity
-            android:name=".MainActivity"
+            android:name="vn.edu.usth.moodleapp.SignInUp.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="vn.edu.usth.moodleapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

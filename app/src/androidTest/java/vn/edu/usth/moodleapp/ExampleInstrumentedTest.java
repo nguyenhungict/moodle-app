@@ -1,4 +1,4 @@
-package vn.edu.usth.moddleapp;
+package vn.edu.usth.moodleapp;
 
 import android.content.Context;
 
