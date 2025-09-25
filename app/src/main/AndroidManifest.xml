@@ -11,18 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoodleApp">
-        <activity
-            android:name="vn.edu.usth.moodleapp.SignInUp.LoginActivity"
-            android:exported="false" />
+
+
+        <!-- Main Activity -->
         <activity
             android:name="vn.edu.usth.moodleapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Profile Activity -->
+        <activity
+            android:name="vn.edu.usth.moodleapp.ProfileActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

@@ -2,62 +2,57 @@ package vn.edu.usth.moodleapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
-import vn.edu.usth.moodleapp.SignInUp.LoginActivity;
+import vn.edu.usth.moodleapp.adapter.HomePagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        // Check if user is signed in (non-null) and update UI accordingly.
-        if (currentUser == null) {
-            // No user is signed in, redirect to LoginActivity
-            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(loginIntent);
-            finish(); // Optional: Call finish() to prevent user from navigating back to MainActivity without logging in
-            return; // Important: return to prevent further execution of onCreate for MainActivity
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("USTH Moodle");
         }
 
-        // If user is signed in, proceed with MainActivity setup
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager2 viewPager = findViewById(R.id.view_pager);
+        HomePagerAdapter adapter = new HomePagerAdapter(this);
+        viewPager.setAdapter(adapter);
 
-        // You can add further logic here for a signed-in user, e.g., load user-specific data.
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            if (position == 0) tab.setText("Trang chủ hệ thống");
+            else tab.setText("Bảng điều khiển");
+        }).attach();
     }
 
-    // It's also good practice to check in onStart, in case the user signs out
-    // and then navigates back to MainActivity via the back stack.
     @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser == null) {
-            // No user is signed in, redirect to LoginActivity
-            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(loginIntent);
-            finish();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_app_bar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_profile) {
+            startActivity(new Intent(this, ProfileActivity.class));
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profile_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:title="Tài khoản"
+        android:titleTextColor="@android:color/black" />
+
+    <!-- URL của Moodle -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="USTH Moodle"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://moodle.usth.edu.vn"
+        android:textColor="@color/blue"
+        android:paddingStart="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center"/>
+
+    <!-- Danh sách tùy chọn -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profile_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dũng Nguyễn Tiến"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:button="@null"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profile_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Điểm"
+            android:drawableStart="@drawable/ic_score"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:button="@null"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profile_files"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tập tin"
+            android:drawableStart="@drawable/ic_folder"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:button="@null"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profile_badges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Các huy hiệu"
+            android:drawableStart="@drawable/ic_badge"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:button="@null"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profile_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tùy chọn"
+            android:drawableStart="@drawable/ic_settings"
+            android:drawablePadding="8dp"
+            android:gravity="start|center_vertical"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:button="@null"/>
+    </LinearLayout>
+
+    <!-- Switch account -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profile_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch account"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="8dp"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:button="@null"/>
+
+    <!-- Logout -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profile_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thoát"
+        android:drawableStart="@drawable/ic_logout"
+        android:drawablePadding="8dp"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:button="@null"/>
+</LinearLayout>
