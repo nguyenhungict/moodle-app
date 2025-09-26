@@ -1,63 +1,65 @@
 package vn.edu.usth.moodleapp;
 
-import android.content.Intent;
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import android.os.Bundle;
+import android.view.MenuItem;
 
-import vn.edu.usth.moodleapp.SignInUp.LoginActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import vn.edu.usth.moodleapp.NavBottom.BlogsFragment;
+import vn.edu.usth.moodleapp.NavBottom.CalendarFragment;
+import vn.edu.usth.moodleapp.NavBottom.MoreFragment;
+import vn.edu.usth.moodleapp.NavBottom.NotificationFragment;
+import vn.edu.usth.moodleapp.NavBottom.FragmentHomeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        // Check if user is signed in (non-null) and update UI accordingly.
-        if (currentUser == null) {
-            // No user is signed in, redirect to LoginActivity
-            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(loginIntent);
-            finish(); // Optional: Call finish() to prevent user from navigating back to MainActivity without logging in
-            return; // Important: return to prevent further execution of onCreate for MainActivity
-        }
-
-        // If user is signed in, proceed with MainActivity setup
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // xử lý khi click vào các item của bottom nav
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+
+                int itemId = item.getItemId();
+                if (itemId == R.id.bottom_home) {
+                    selectedFragment = new FragmentHomeActivity();
+                } else if (itemId == R.id.notification) {
+                    selectedFragment = new NotificationFragment();
+                } else if (itemId == R.id.calendar) {
+                    selectedFragment = new CalendarFragment();
+                } else if (itemId == R.id.blog) {
+                    selectedFragment = new BlogsFragment();
+                } else if (itemId == R.id.more) {
+                    selectedFragment = new MoreFragment();
+                }
+
+                if (selectedFragment != null) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, selectedFragment)
+                            .commit();
+                }
+
+                return true;
+            }
         });
 
-        // You can add further logic here for a signed-in user, e.g., load user-specific data.
-    }
-
-    // It's also good practice to check in onStart, in case the user signs out
-    // and then navigates back to MainActivity via the back stack.
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser == null) {
-            // No user is signed in, redirect to LoginActivity
-            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(loginIntent);
-            finish();
+        // mặc định mở fragment Home khi vào app
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new FragmentHomeActivity())
+                    .commit();
         }
     }
 }
