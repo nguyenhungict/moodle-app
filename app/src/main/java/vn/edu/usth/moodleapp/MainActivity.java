@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
-            if (position == 0) tab.setText("Trang chủ hệ thống");
-            else tab.setText("Bảng điều khiển");
+            if (position == 0) tab.setText("System home page");
+            else tab.setText("Control panel");
         }).attach();
     }
 

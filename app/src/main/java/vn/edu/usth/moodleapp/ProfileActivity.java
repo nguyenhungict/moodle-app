@@ -18,14 +18,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Tài khoản");
+            getSupportActionBar().setTitle("Account");
 
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Nút back trên Toolbar
+        // back on Toolbar
         if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
