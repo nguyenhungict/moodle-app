@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailTeacher1.Teacher1">
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:drawableLeft="@drawable/back"
+        />
+
+    <LinearLayout
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@+id/back"
+        android:layout_marginTop="5dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/infor1"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/teacher1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/circle_shape"
+                android:src="@drawable/baseline_person_24" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/infor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ha Nguyen Hoang"
+                android:textSize="25dp"
+                android:textAlignment="textStart"
+                android:layout_gravity="top"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Role: Teacher"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last access: 2 days ago"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_mail1"
+        style="@style/Widget.Material3.MaterialTimePicker.Button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/detail"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="@color/dark_orange"
+        android:drawableLeft="@drawable/email"
+        android:paddingStart="145dp"
+        android:paddingEnd="145dp"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textAlignment="center"
+        android:layout_marginRight="20dp"
+        android:cursorVisible="true"
+        />
+
+    <TextView
+        android:id="@+id/details1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/btn_mail1"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:drawableEnd="@drawable/arrow_right"
+        android:gravity="center"
+        android:text="  Details"
+        android:textAlignment="viewStart"
+        android:textSize="17dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <TextView
+        android:id="@+id/badges1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/details1"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/cup_ic"
+        android:drawableEnd="@drawable/arrow_right"
+        android:gravity="center"
+        android:text="   Badges"
+        android:textAlignment="viewStart"
+        android:textSize="17dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="5dp"
+        />
+
+
+</RelativeLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/img"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:layout_below="@id/back"-->
+<!--        android:src="@drawable/baseline_person_24"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:background="@drawable/circle_shape"-->
+<!--        android:scaleType="centerCrop" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Ha Nguyen Hoang"-->
+<!--        android:textSize="18sp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_below="@id/img"-->
+<!--        android:gravity="center"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/place"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hanoi, Viet Nam"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_below="@id/name"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:drawableLeft="@drawable/place_ic"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/email_btn"-->
+<!--        style="@style/Widget.Material3.MaterialTimePicker.Button"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:drawableLeft="@drawable/email"-->
+<!--        android:backgroundTint="@color/dark_orange"-->
+<!--        android:layout_below="@id/place"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="EMAIL"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        android:paddingStart="145dp"-->
+<!--        android:paddingEnd="145dp"-->
+<!--        android:layout_marginLeft="10dp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:drawableLeft="@drawable/baseline_person_24"-->
+<!--        android:drawableTint="@color/black"-->
+<!--        android:drawableRight="@drawable/arrow_right"-->
+<!--        android:layout_below="@id/email_btn"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:paddingRight="15dp"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:text="Details"-->
+<!--        android:textSize="21dp"-->
+<!--        android:cursorVisible="true"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/badge"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:drawableLeft="@drawable/cup_ic"-->
+<!--        android:drawableRight="@drawable/arrow_right"-->
+<!--        android:layout_below="@id/detail"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:paddingRight="15dp"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:text="Badges"-->
+<!--        android:textSize="21dp"-->
+<!--        android:cursorVisible="true"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/blog_entries"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:drawableLeft="@drawable/blog_ic"-->
+<!--        android:drawableTint="@color/black"-->
+<!--        android:drawableRight="@drawable/arrow_right"-->
+<!--        android:layout_below="@id/badge"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:paddingRight="15dp"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:text="Blog entries"-->
+<!--        android:textSize="21dp"-->
+<!--        android:cursorVisible="true"/>-->
+<!--</RelativeLayout>-->
