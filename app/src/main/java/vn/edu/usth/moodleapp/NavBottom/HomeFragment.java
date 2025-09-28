@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import vn.edu.usth.moodleapp.R;
 
-public class FragmentHomeActivity extends Fragment {
+public class HomeFragment extends Fragment {
 
     @Nullable
     @Override
