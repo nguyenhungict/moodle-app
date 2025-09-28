@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Site blog"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Ô nhập username -->
+    <EditText
+        android:id="@+id/inputUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter username"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Ô nhập nội dung post -->
+    <EditText
+        android:id="@+id/inputPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write something..."
+        android:layout_below="@id/inputUsername"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Nút gửi -->
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_below="@id/inputPost"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Container hiển thị blog -->
+    <LinearLayout
+        android:id="@+id/blogContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/btnSend"
+        android:layout_marginTop="15dp"/>
+
+</RelativeLayout>
