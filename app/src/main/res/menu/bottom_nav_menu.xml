@@ -1,18 +1,29 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/nav_home"
-        android:icon="@drawable/ic_dashboard"
-        android:title="Home" />
+        android:title=""
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/nav_notification"
-        android:icon="@drawable/ic_bell"
-        android:title="Notification" />
+        android:title=""
+        android:id="@+id/notification"
+        android:icon="@drawable/ic_notifications"
+        android:iconTint="@color/black"
+        />
     <item
-        android:id="@+id/nav_calendar"
-        android:icon="@drawable/ic_calendar"
-        android:title="Calendar" />
+        android:title=""
+        android:id="@+id/calendar"
+        android:icon="@drawable/ic_calendar"/>
     <item
-        android:id="@+id/nav_more"
-        android:icon="@drawable/ic_more"
-        android:title="More" />
+        android:title=""
+        android:id="@+id/blog"
+        android:icon="@drawable/ic_blog"
+        android:iconTint="@color/black"/>
+    <item
+        android:title=""
+        android:id="@+id/more"
+        android:icon="@drawable/ic_more"/>
 </menu>
+

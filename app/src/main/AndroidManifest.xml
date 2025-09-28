@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Thêm quyền Internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,10 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoodleApp">
 
-
         <!-- Main Activity -->
+
+        android:theme="@style/Theme.MoodleApp"
+        tools:replace="android:icon, android:label, android:theme">
+
         <activity
-            android:name="vn.edu.usth.moodleapp.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +33,5 @@
         <activity
             android:name="vn.edu.usth.moodleapp.ProfileActivity"
             android:exported="false" />
-
     </application>
-
 </manifest>
