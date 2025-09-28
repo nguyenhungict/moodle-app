@@ -1,13 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <!-- Demo nội dung dashboard -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Dashboard Content"
-        android:gravity="center"
-        android:textSize="24sp"/>
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <!-- Tiêu đề -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Course overview"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btn_dowload"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/cloud_download" />
+        </RelativeLayout>
+
+        <!-- Nội dung cuộn -->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Ô tìm kiếm -->
+            <EditText
+
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@android:drawable/edit_text"
+                android:drawableStart="@drawable/outline_find_in_page_24"
+                android:drawablePadding="15dp"
+                android:hint="@string/search_for_course"
+                android:padding="15dp" />
+            <LinearLayout
+                android:id="@+id/layout_filter_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="3dp"
+                android:layout_marginBottom="0dp">
+                <Button
+                    android:id="@+id/btn_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:text="In progress"
+                    android:textSize="12dp"
+                    android:textAlignment="textStart"
+                    android:paddingStart="6dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:drawableRight="@drawable/arrow_drop_down">
+                </Button>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageButton
+                    android:id="@+id/btn_sort"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/sort_24"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Sorting"
+                    android:layout_marginEnd="12dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_grid"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/grid_view"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Grid view" />
+
+
+
+            </LinearLayout>
+
+            <!-- Danh sách khóa học -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <!-- Item khóa học -->
+                <Button
+                    android:id="@+id/btn_cal2"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] MAT1.003 Calculus II"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+
+                <Button
+                    android:id="@+id/btn_ITI"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S1] ICT1.001 Introduction to Informatics"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_BP"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] ICT1.002 Basic Programming"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_CA"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] ICT1.003 Computer Architecture"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_ITA"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] ICT1.004 Introduction to Algorithms"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_DM"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] MAT1.004 Discrete Mathematics"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_NM"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] MAT1.005 Numerical Methods"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_FP2"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="[14-S2] PHY1.002 Fundamental Physics II"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_FOD"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="Fundamentals of databases (2024-2025)"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+                <Button
+                    android:id="@+id/btn_ML"
+                    style="@style/Widget.Material3.MaterialTimePicker.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:drawableLeft="@drawable/graduation_cap"
+                    android:drawableRight="@drawable/outline_threedots"
+                    android:padding="12dp"
+                    android:text="Machine learning and data mining 1 (2024-2025"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:iconPadding="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Moodle app</string>
+    <string name="search_for_course">Filter my courses</string>
 </resources>
