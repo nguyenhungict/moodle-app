@@ -1,6 +1,9 @@
 package vn.edu.usth.moodleapp;
 
 import androidx.annotation.NonNull;
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -18,6 +21,8 @@ import vn.edu.usth.moodleapp.NavBottom.FragmentHomeActivity;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,5 +66,14 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragment_container, new FragmentHomeActivity())
                     .commit();
         }
+
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
     }
 }
