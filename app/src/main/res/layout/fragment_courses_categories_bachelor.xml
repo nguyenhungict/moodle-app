@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:fillViewport="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/back"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:drawableLeft="@drawable/back"
+            android:drawableRight="@drawable/menu"
+            android:paddingEnd="15dp"
+            android:text="Bachelor"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:iconPadding="15dp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/back"
+            android:text="Course categories/ Bachelor"
+            android:layout_marginStart="10dp"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/bachelor"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textView1"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="First year - Sciences (four-year program)"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/mobile_button2"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/bachelor"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="First year - Sciences (three-year program)"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/mobile_button3"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mobile_button2"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="Pharmacological Medical and Agronomical Biotechnology"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/mobile_button4"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mobile_button3"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="Advanced Materials Science and Nanotechnology"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/mobile_button5"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mobile_button4"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="Applied Engineering and Technology (AET)"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/ict"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mobile_button5"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="Information and Communication Technology"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/mobile_button7"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/ict"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="Water, environment, oceanography"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+        <Button
+            android:id="@+id/mobile_button8"
+            style="@style/Widget.Material3.MaterialTimePicker.Button"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mobile_button7"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/cate_folder"
+            android:drawableRight="@drawable/arrow_right"
+            android:text="Space and Applications"
+            android:textColor="#555252"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            app:iconPadding="15dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"/>
+
+    </RelativeLayout>
+</ScrollView>

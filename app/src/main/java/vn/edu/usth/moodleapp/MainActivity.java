@@ -1,22 +1,24 @@
 package vn.edu.usth.moodleapp;
 
-import androidx.annotation.NonNull;
 import android.os.Bundle;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import vn.edu.usth.moodleapp.Courses.CoursesCategoriesFragment;
 import vn.edu.usth.moodleapp.NavBottom.BlogsFragment;
 import vn.edu.usth.moodleapp.NavBottom.CalendarFragment;
 import vn.edu.usth.moodleapp.NavBottom.MoreFragment;
 import vn.edu.usth.moodleapp.NavBottom.NotificationFragment;
-import vn.edu.usth.moodleapp.NavBottom.HomeFragment; // nên đổi tên file cho hợp lý
+import vn.edu.usth.moodleapp.NavBottom.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        // Bắt sự kiện chọn item trong BottomNavigation
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -53,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // mặc định mở fragment Home khi vào app
+        // Fragment mặc định khi vào app
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new HomeFragment())
+                    .replace(R.id.fragment_container, new CoursesCategoriesFragment()) // 👈 có thể đổi thành HomeFragment
                     .commit();
         }
     }
