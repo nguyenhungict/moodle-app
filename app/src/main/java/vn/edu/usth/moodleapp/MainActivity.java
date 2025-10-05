@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import vn.edu.usth.moodleapp.Courses.CoursesCategoriesFragment;
 import vn.edu.usth.moodleapp.NavBottom.BlogsFragment;
 import vn.edu.usth.moodleapp.NavBottom.CalendarFragment;
 import vn.edu.usth.moodleapp.NavBottom.MoreFragment;
@@ -58,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
 
             if (id == R.id.bottom_home) {
-                // Hiển thị ViewPager2 + TabLayout
+                // Hiển thị lại ViewPager2 + TabLayout
                 viewPager.setVisibility(View.VISIBLE);
                 tabLayout.setVisibility(View.VISIBLE);
-                findViewById(R.id.fragment_container_placeholder).setVisibility(View.GONE);
-                viewPager.setCurrentItem(0); // mặc định tab System home page
+                findViewById(R.id.fragment_container).setVisibility(View.GONE);
+                viewPager.setCurrentItem(0);
             } else if (id == R.id.notification) {
                 selectedFragment = new NotificationFragment();
             } else if (id == R.id.calendar) {
@@ -74,24 +76,40 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (selectedFragment != null) {
-                // Ẩn ViewPager2 + TabLayout, hiển thị fragment tương ứng
+                // Ẩn ViewPager2 + TabLayout, hiển thị fragment riêng
                 viewPager.setVisibility(View.GONE);
                 tabLayout.setVisibility(View.GONE);
-                findViewById(R.id.fragment_container_placeholder).setVisibility(View.VISIBLE);
+                findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
 
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container_placeholder, selectedFragment)
+                        .replace(R.id.fragment_container, selectedFragment)
                         .commit();
             }
-
             return true;
         });
 
-        // Mặc định hiển thị tab System home page
+        // 👉 Mặc định hiển thị ViewPager
         viewPager.setVisibility(View.VISIBLE);
         tabLayout.setVisibility(View.VISIBLE);
-        findViewById(R.id.fragment_container_placeholder).setVisibility(View.GONE);
+        findViewById(R.id.fragment_container).setVisibility(View.GONE);
         viewPager.setCurrentItem(0);
+
+        // 👉 Bắt sự kiện nút btn_course_list (nằm trong layout nào đó)
+        View btnCourseList = findViewById(R.id.btn_course_list);
+        if (btnCourseList != null) {
+            btnCourseList.setOnClickListener(v -> {
+                // Ẩn ViewPager + TabLayout
+                viewPager.setVisibility(View.GONE);
+                tabLayout.setVisibility(View.GONE);
+                findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
+
+                // Mở CoursesCategoriesFragment
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new CoursesCategoriesFragment())
+                        .addToBackStack(null) // cho phép back về ViewPager
+                        .commit();
+            });
+        }
     }
 
     @Override
@@ -102,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_profile) {
             startActivity(new Intent(this, ProfileActivity.class));
             return true;
