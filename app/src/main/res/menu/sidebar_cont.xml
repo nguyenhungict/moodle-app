@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item-->
+<!--        android:id="@+id/nav_home"-->
+<!--        android:title="Home"-->
+<!--        android:icon="@drawable/nav_home"-->
+<!--        />-->
+
+    <item
+        android:id="@+id/nav_grades"
+        android:title="Grades"
+        android:icon="@drawable/nav_mark"
+        />
+    <item
+        android:id="@+id/nav_files"
+        android:title="Files"
+        android:icon="@drawable/nav_file"
+        />
+    <item
+        android:id="@+id/nav_badges"
+        android:title="Badges"
+        android:icon="@drawable/cup_ic"
+        />
+    <item
+        android:id="@+id/nav_preference"
+        android:title="Preference"
+        android:icon="@drawable/nav_preference"
+        />
+    <item
+        android:id="@+id/nav_out"
+        android:title="Log out"
+        android:icon="@drawable/nav_logout"
+        />
+</menu>

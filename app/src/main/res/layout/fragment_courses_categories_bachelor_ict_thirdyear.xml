@@ -53,7 +53,10 @@
             android:textSize="18sp"
             android:textAlignment="textStart"
             android:paddingStart="10dp"
-            android:paddingEnd="10dp" />
+            android:paddingEnd="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            />
 
         <Button
             android:id="@+id/course_web"

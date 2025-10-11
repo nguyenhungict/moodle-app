@@ -8,12 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -22,6 +25,10 @@ import vn.edu.usth.moodleapp.NavBottom.BlogsFragment;
 import vn.edu.usth.moodleapp.NavBottom.CalendarFragment;
 import vn.edu.usth.moodleapp.NavBottom.MoreFragment;
 import vn.edu.usth.moodleapp.NavBottom.NotificationFragment;
+import vn.edu.usth.moodleapp.Nav_fragments.BadgesFragment;
+import vn.edu.usth.moodleapp.Nav_fragments.FilesFragment;
+import vn.edu.usth.moodleapp.Nav_fragments.GradesFragment;
+import vn.edu.usth.moodleapp.Nav_fragments.PreferenceFragment;
 import vn.edu.usth.moodleapp.adapter.HomePagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
+    private DrawerLayout drawerLayout;
+    private NavigationView navBar;
+    private ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +51,45 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("USTH Moodle");
         }
+
+        drawerLayout = findViewById(R.id.main);
+        navBar = findViewById(R.id.nav_bar);
+        toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close
+        );
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navBar.setNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            int id = item.getItemId();
+
+            if (id == R.id.nav_grades) {
+                selectedFragment = new GradesFragment();
+            } else if (id == R.id.nav_files) {
+                selectedFragment = new FilesFragment();
+            } else if (id == R.id.nav_badges) {
+                selectedFragment = new BadgesFragment();
+            } else if (id == R.id.nav_preference) {
+                selectedFragment = new PreferenceFragment();
+            } else if (id == R.id.nav_out) {
+                finishAffinity(); // Exit app
+                return true;
+            }
+
+            if (selectedFragment != null) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, selectedFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+
+            drawerLayout.closeDrawers();
+            return true;
+        });
 
         // TabLayout + ViewPager2
         tabLayout = findViewById(R.id.tab_layout);
@@ -121,10 +170,31 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
         if (item.getItemId() == R.id.action_profile) {
             startActivity(new Intent(this, ProfileActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+    public void openFragment(Fragment fragment) {
+        // Hide the ViewPager and TabLayout
+        if (viewPager != null && tabLayout != null) {
+            viewPager.setVisibility(View.GONE);
+            tabLayout.setVisibility(View.GONE);
+        }
+
+        // Show the fragment container
+        findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
+
+        // Replace the current fragment
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
 }

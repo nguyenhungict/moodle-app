@@ -5,4 +5,7 @@
     <color name="orange">#FFA500</color>
     <color name="blue">#2196F3</color>
     <color name="red">#F44336</color>
+    <color name="dark_orange">#FD6E00</color>
+    <color name="green">#35b761</color>
+    <color name="light_orange"> #ebdaba</color>
 </resources>
