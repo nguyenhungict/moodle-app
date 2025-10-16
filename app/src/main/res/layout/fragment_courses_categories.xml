@@ -30,12 +30,12 @@
 
         <!-- Nút Menu (nằm bên phải) -->
         <Button
-            android:id="@+id/btn_menu"
+            android:id="@+id/btn_menu1"
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:drawableLeft="@drawable/menu"
+            android:drawableEnd="@drawable/menu"
             android:text=""
             android:paddingEnd="15dp"
             android:gravity="center"/>

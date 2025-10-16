@@ -11,26 +11,54 @@
         android:layout_height="wrap_content">
 
         <!-- Header -->
-        <Button
-            style="@style/OrangeButton"
-            android:id="@+id/back_third_year"
+        <RelativeLayout
+            android:id="@+id/header_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/orange"
-            android:drawableLeft="@drawable/back"
-            android:drawableRight="@drawable/menu"
-            android:paddingEnd="15dp"
-            android:text="Third Year"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:background="@color/orange">
+
+            <!-- Nút Back -->
+            <Button
+                android:id="@+id/btn_back"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:drawableLeft="@drawable/back"
+                android:paddingStart="10dp"
+                android:gravity="center" />
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/title_third_year"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="THIRD YEAR"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/btn_back"/>
+
+            <!-- Nút Menu -->
+            <Button
+                android:id="@+id/btn_menu"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:drawableRight="@drawable/menu"
+                android:text=""
+                android:paddingEnd="15dp"
+                android:gravity="center" />
+        </RelativeLayout>
 
         <!-- Breadcrumb -->
         <TextView
             android:id="@+id/textView_third_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/back_third_year"
+            android:layout_below="@id/header_layout"
             android:text="Course categories / Bachelor / ICT / Third Year"
             android:layout_marginStart="10dp"
             android:textSize="21sp"
@@ -55,8 +83,7 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:clickable="true"
-            android:focusable="true"
-            />
+            android:focusable="true" />
 
         <Button
             android:id="@+id/course_web"

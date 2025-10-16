@@ -27,7 +27,7 @@ public class ThirdYearFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_courses_categories_bachelor_ict_thirdyear, container, false);
 
         // Nút Back
-        Button backBtn = view.findViewById(R.id.back_third_year);
+        Button backBtn = view.findViewById(R.id.btn_back);
         backBtn.setOnClickListener(v -> {
             requireActivity()
                     .getSupportFragmentManager()
