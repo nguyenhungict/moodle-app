@@ -51,12 +51,11 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
-    implementation("com.google.firebase:firebase-auth-ktx")
-    // Nếu dùng Firestore hoặc Realtime Database, bỏ comment:
-    // implementation("com.google.firebase:firebase-firestore-ktx")
-    // implementation("com.google.firebase:firebase-database-ktx")
+    //Volley dependencies
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     // Testing
     testImplementation("junit:junit:4.13.2")

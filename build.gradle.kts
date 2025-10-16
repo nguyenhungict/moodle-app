@@ -8,7 +8,8 @@ buildscript {
     }
 }
 
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("com.android.application") version "8.5.0" apply false
+    alias(libs.plugins.android.application) apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 }
