@@ -23,10 +23,10 @@ public class CalendarFragment extends Fragment {
 
         calendarWebView = view.findViewById(R.id.calendarWebView);
         WebSettings webSettings = calendarWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true); // Cho phép chạy JS trong WebView
+        webSettings.setJavaScriptEnabled(true);
         calendarWebView.setWebViewClient(new WebViewClient());
 
-        // 👉 Thay link này bằng link embed calendar của bạn
+
         String calendarUrl = "https://calendar.google.com/calendar/embed?src=ict.usthedu%40gmail.com&ctz=Asia%2FHo_Chi_Minh";
         calendarWebView.loadUrl(calendarUrl);
 

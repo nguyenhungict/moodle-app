@@ -27,7 +27,7 @@ public class MoodleVolleyClient {
         this.gson = new Gson();
     }
 
-    // 1. LOGIN - Lấy token
+
     public void login(String username, String password,
                       Response.Listener<String> listener,
                       Response.ErrorListener errorListener) {
@@ -38,7 +38,7 @@ public class MoodleVolleyClient {
         requestQueue.add(request);
     }
 
-    // 2. LẤY DANH SÁCH COURSES CỦA USER
+
     public void getUserCourses(String token, long userId,
                                Response.Listener<String> listener,
                                Response.ErrorListener errorListener) {
@@ -58,7 +58,7 @@ public class MoodleVolleyClient {
         requestQueue.add(request);
     }
 
-    // 3. LẤY NỘI DUNG COURSE (Modules, Files) - CHỨC NĂNG CHÍNH
+
     public void getCourseContents(String token, long courseId,
                                   Response.Listener<String> listener,
                                   Response.ErrorListener errorListener) {
@@ -78,7 +78,7 @@ public class MoodleVolleyClient {
         requestQueue.add(request);
     }
 
-    // 4. TẠO USER MỚI
+
     public void createUser(String token, String username, String password,
                            String firstname, String lastname, String email,
                            Response.Listener<String> listener,
@@ -103,7 +103,7 @@ public class MoodleVolleyClient {
         requestQueue.add(request);
     }
 
-    // 5. LẤY THÔNG TIN SITE
+
     public void getSiteInfo(String token,
                             Response.Listener<String> listener,
                             Response.ErrorListener errorListener) {
@@ -122,22 +122,10 @@ public class MoodleVolleyClient {
         requestQueue.add(request);
     }
 
-    // Helper methods để parse JSON
+
     public TokenResponse parseTokenResponse(String jsonResponse) {
         return gson.fromJson(jsonResponse, TokenResponse.class);
     }
 
-//    public List<Course> parseCoursesResponse(String jsonResponse) {
-//        Type listType = new TypeToken<List<Course>>(){}.getType();
-//        return gson.fromJson(jsonResponse, listType);
-//    }
-//
-//    public List<CourseContent> parseCourseContentsResponse(String jsonResponse) {
-//        Type listType = new TypeToken<List<CourseContent>>(){}.getType();
-//        return gson.fromJson(jsonResponse, listType);
-//    }
 
-//    public SiteInfo parseSiteInfoResponse(String jsonResponse) {
-//        return gson.fromJson(jsonResponse, SiteInfo.class);
-//    }
 }

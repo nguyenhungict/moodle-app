@@ -122,11 +122,11 @@ public class CourseContentAdapter extends RecyclerView.Adapter<CourseContentAdap
             tvModuleName.setText(module.name);
             tvModuleType.setText(module.modplural);
             
-            // Set icon based on module type
+
             int iconRes = getModuleIcon(module.modname);
             ivModuleIcon.setImageResource(iconRes);
             
-            // Set click listener to open file/content
+
             itemView.setOnClickListener(v -> openModule(module));
         }
         
@@ -135,14 +135,14 @@ public class CourseContentAdapter extends RecyclerView.Adapter<CourseContentAdap
             String fileName = "Unknown";
             
             if (module.contents != null && !module.contents.isEmpty()) {
-                // Có file content - lấy file đầu tiên
+
                 CourseContent.Module.Content content = module.contents.get(0);
                 if (content.fileurl != null && !content.fileurl.isEmpty()) {
                     urlToShow = content.fileurl;
                     fileName = content.filename != null ? content.filename : "File";
                 }
             } else if (module.url != null && !module.url.isEmpty()) {
-                // Có URL
+
                 urlToShow = module.url;
                 fileName = module.name != null ? module.name : "Module";
             }
@@ -155,13 +155,13 @@ public class CourseContentAdapter extends RecyclerView.Adapter<CourseContentAdap
         }
         
         private void showFileUrl(String fileUrl, String fileName) {
-            // Thêm token vào URL
+
             String urlWithToken = fileUrl;
             if (!fileUrl.contains("token=")) {
                 urlWithToken = fileUrl + (fileUrl.contains("?") ? "&" : "?") + "token=986624f3530e6493486ae5ec3956aed3";
             }
             
-            // Mở file trong browser/web
+
             try {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(urlWithToken));
@@ -173,7 +173,7 @@ public class CourseContentAdapter extends RecyclerView.Adapter<CourseContentAdap
                 Toast.makeText(itemView.getContext(), "Không thể mở file: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
             
-            // Log để debug
+
             android.util.Log.d("FileURL", "Opening file: " + fileName + " - URL: " + urlWithToken);
         }
 

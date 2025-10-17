@@ -20,10 +20,10 @@ public class CoursesCategoriesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Gắn XML vào Fragment
+
         View view = inflater.inflate(R.layout.fragment_courses_categories, container, false);
 
-        // Nút Back
+
         Button btnBack = view.findViewById(R.id.btn_back);
         btnBack.setOnClickListener(v -> {
             requireActivity()
@@ -33,10 +33,10 @@ public class CoursesCategoriesFragment extends Fragment {
                     .commit();
         });
 
-        // Nút Bachelor
+
         Button bachelorBtn = view.findViewById(R.id.bachelor);
         bachelorBtn.setOnClickListener(v -> {
-            // Khi click sẽ mở sang BachelorFragment
+
             requireActivity()
                     .getSupportFragmentManager()
                     .beginTransaction()

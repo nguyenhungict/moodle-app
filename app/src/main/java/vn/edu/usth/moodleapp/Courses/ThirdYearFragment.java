@@ -15,7 +15,7 @@ import vn.edu.usth.moodleapp.R;
 public class ThirdYearFragment extends Fragment {
 
     public ThirdYearFragment() {
-        // Bắt buộc có constructor rỗng
+
     }
 
     @Nullable
@@ -26,7 +26,7 @@ public class ThirdYearFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_courses_categories_bachelor_ict_thirdyear, container, false);
 
-        // Nút Back
+
         Button backBtn = view.findViewById(R.id.btn_back);
         backBtn.setOnClickListener(v -> {
             requireActivity()
@@ -34,18 +34,13 @@ public class ThirdYearFragment extends Fragment {
                     .popBackStack();
         });
 
-        // Nút "Mobile Development"
+
         Button mobileBtn = view.findViewById(R.id.course_mobile);
         mobileBtn.setOnClickListener(v -> {
-            // TODO: mở MobileFragment (sau này bạn tạo thêm)
-            // requireActivity().getSupportFragmentManager()
-            //         .beginTransaction()
-            //         .replace(R.id.fragment_container, new MobileFragment())
-            //         .addToBackStack(null)
-            //         .commit();
+
         });
 
-        // Nút "Web Programming"
+
         Button webBtn = view.findViewById(R.id.course_web);
         webBtn.setOnClickListener(v -> {
             requireActivity().getSupportFragmentManager()

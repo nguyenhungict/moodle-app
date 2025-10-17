@@ -19,15 +19,15 @@ public class FilesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Inflate the layout
+
         View view = inflater.inflate(R.layout.frag_files, container, false);
 
-        // Find the back button by its ID
+
         ImageButton backButton = view.findViewById(R.id.btn_back);
 
-        // Handle the back button click
+
         backButton.setOnClickListener(v -> {
-            // This will go back to the previous fragment
+
             requireActivity().onBackPressed();
         });
 

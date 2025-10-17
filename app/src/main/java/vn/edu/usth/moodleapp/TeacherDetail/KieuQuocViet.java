@@ -13,7 +13,7 @@ import vn.edu.usth.moodleapp.R;
 public class KieuQuocViet extends Fragment {
 
     public KieuQuocViet() {
-        super(R.layout.activity_teacher1); // link your XML layout
+        super(R.layout.activity_teacher1);
     }
 
     @Override

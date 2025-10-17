@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Account");
         }
 
-        // Populate username on the right-side profile view
+
         Button profileUserBtn = findViewById(R.id.profile_user);
         SharedPreferences sp = getSharedPreferences("moodle", MODE_PRIVATE);
         String username = sp.getString("username", "Guest");
@@ -32,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
             profileUserBtn.setText(username);
         }
 
-        // Logout -> clear session and go back to LoginActivity
+
         Button logoutBtn = findViewById(R.id.profile_logout);
         if (logoutBtn != null) {
             logoutBtn.setOnClickListener(v -> {

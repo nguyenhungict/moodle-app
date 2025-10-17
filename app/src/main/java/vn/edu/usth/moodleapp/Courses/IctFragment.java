@@ -22,7 +22,7 @@ public class IctFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_courses_categories_bachelor_ict, container, false);
 
-        // Nút Third Year
+
         Button thirdYearBtn = view.findViewById(R.id.third_year);
         thirdYearBtn.setOnClickListener(v -> {
             requireActivity()
@@ -33,7 +33,7 @@ public class IctFragment extends Fragment {
                     .commit();
         });
 
-        Button backBtn = view.findViewById(R.id.back);
+        Button backBtn = view.findViewById(R.id.btn_back);
         backBtn.setOnClickListener(v -> {
             requireActivity().getSupportFragmentManager().popBackStack();
         });

@@ -53,7 +53,7 @@ public class WebProgrammingFragment extends Fragment {
         setupRecyclerView();
         volleyClient = new MoodleVolleyClient(getContext());
         
-        // Lấy danh sách khóa học trước
+
         getUserCourses();
         
         return view;
@@ -103,14 +103,14 @@ public class WebProgrammingFragment extends Fragment {
                         if (webProgrammingCourseId != -1) {
                             getCourseContents();
                         } else {
-                            // Thử với course ID cố định nếu không tìm thấy
+
                             Log.d(TAG, "Trying with fixed course ID...");
                             webProgrammingCourseId = 3; // Thử với course ID = 2
                             tvTitle.setText("Web Programming (ID: " + webProgrammingCourseId + ")");
                             getCourseContents();
                         }
                     } else {
-                        // Response có thể là object lỗi
+
                         Log.e(TAG, "Response is not an array: " + response);
                         showError("Server trả về dữ liệu không đúng format: " + response);
                     }
@@ -138,7 +138,7 @@ public class WebProgrammingFragment extends Fragment {
             public void onResponse(String response) {
                 Log.d(TAG, "Course contents response: " + response);
                 try {
-                    // Kiểm tra response có phải là array không
+
                     if (response.trim().startsWith("[")) {
                         Type listType = new TypeToken<List<CourseContent>>(){}.getType();
                         List<CourseContent> contents = new Gson().fromJson(response, listType);

@@ -22,10 +22,10 @@ public class BachelorFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_courses_categories_bachelor, container, false);
 
-        // Tìm nút ICT
+
         Button ictButton = view.findViewById(R.id.ict);
 
-        // Gán sự kiện click
+
         ictButton.setOnClickListener(v -> {
             FragmentTransaction transaction = requireActivity()
                     .getSupportFragmentManager()

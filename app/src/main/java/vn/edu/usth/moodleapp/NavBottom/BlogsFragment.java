@@ -36,7 +36,7 @@ public class BlogsFragment extends Fragment {
 
             if (!content.isEmpty()) {
                 if (username.isEmpty()) {
-                    username = "Anonymous"; // default username
+                    username = "Anonymous";
                 }
                 addPost(username, content);
                 inputPost.setText("");
@@ -47,13 +47,13 @@ public class BlogsFragment extends Fragment {
     }
 
     private void addPost(String username, String content) {
-        // Create layout for 1 post
+
         LinearLayout postLayout = new LinearLayout(getContext());
         postLayout.setOrientation(LinearLayout.VERTICAL);
         postLayout.setPadding(20, 20, 20, 20);
         postLayout.setBackgroundResource(android.R.drawable.dialog_holo_light_frame);
 
-        // Row chứa avatar + username
+
         LinearLayout headerLayout = new LinearLayout(getContext());
         headerLayout.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -70,17 +70,17 @@ public class BlogsFragment extends Fragment {
         headerLayout.addView(avatar);
         headerLayout.addView(usernameView);
 
-        // Nội dung post
+
         TextView postView = new TextView(getContext());
         postView.setText(content);
         postView.setTextSize(16);
         postView.setPadding(0, 10, 0, 0);
 
-        // Gắn vào layout post
+
         postLayout.addView(headerLayout);
         postLayout.addView(postView);
 
-        // Thêm vào container
+
         blogContainer.addView(postLayout, 0);
     }
 }

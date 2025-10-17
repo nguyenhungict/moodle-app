@@ -27,7 +27,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText etUsername, etEmail, etPassword, etRePassword;
     private MoodleVolleyClient volleyClient;
 
-    // ⚠️ Thay bằng token của external service có quyền core_user_create_users
+
     private static final String ADMIN_TOKEN = "986624f3530e6493486ae5ec3956aed3";
 
     @Override
@@ -63,7 +63,7 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        // Gọi API tạo user với Volley
+
         volleyClient.createUser(
                 ADMIN_TOKEN,
                 username,
@@ -86,7 +86,7 @@ public class SignupActivity extends AppCompatActivity {
                                 finish();
                             } else {
                                 Log.e("SignUp", "Server error: " + json);
-                                // Server trả object lỗi
+
                                 Toast.makeText(SignupActivity.this,
                                         "Server error: " + json,
                                         Toast.LENGTH_LONG).show();

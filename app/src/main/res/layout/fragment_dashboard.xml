@@ -129,7 +129,7 @@
                     app:iconPadding="15dp" />
 
                 <Button
-                    android:id="@+id/btn_ITI"
+                    android:id="@+id/btn_web"
                     style="@style/Widget.Material3.MaterialTimePicker.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -137,13 +137,13 @@
                     android:drawableLeft="@drawable/graduation_cap"
                     android:drawableRight="@drawable/outline_threedots"
                     android:padding="12dp"
-                    android:text="[14-S1] ICT1.001 Introduction to Informatics"
+                    android:text="Web Application Development 2025-2026"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:iconPadding="15dp" />
                 <Button
-                    android:id="@+id/btn_BP"
+                    android:id="@+id/btn_AI"
                     style="@style/Widget.Material3.MaterialTimePicker.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -151,13 +151,13 @@
                     android:drawableLeft="@drawable/graduation_cap"
                     android:drawableRight="@drawable/outline_threedots"
                     android:padding="12dp"
-                    android:text="[14-S2] ICT1.002 Basic Programming"
+                    android:text="Artificial Intelligence"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:iconPadding="15dp" />
                 <Button
-                    android:id="@+id/btn_CA"
+                    android:id="@+id/btn_CN"
                     style="@style/Widget.Material3.MaterialTimePicker.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -165,13 +165,13 @@
                     android:drawableLeft="@drawable/graduation_cap"
                     android:drawableRight="@drawable/outline_threedots"
                     android:padding="12dp"
-                    android:text="[14-S2] ICT1.003 Computer Architecture"
+                    android:text="Computer Network 2025-2026"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:iconPadding="15dp" />
                 <Button
-                    android:id="@+id/btn_ITA"
+                    android:id="@+id/btn_DataMag"
                     style="@style/Widget.Material3.MaterialTimePicker.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
                     android:drawableLeft="@drawable/graduation_cap"
                     android:drawableRight="@drawable/outline_threedots"
                     android:padding="12dp"
-                    android:text="[14-S2] ICT1.004 Introduction to Algorithms"
+                    android:text="Database Management 2025-2026"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textStyle="bold"

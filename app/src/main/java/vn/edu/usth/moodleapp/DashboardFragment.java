@@ -21,13 +21,13 @@ public class DashboardFragment extends Fragment {
     private ImageButton btnSort, btnGrid;
     private Button btnProgress;
 
-    // Danh sách ID các button course
+    // IDS list
     private final int[] courseButtonIds = {
             R.id.btn_mobile,
-            R.id.btn_ITI,
-            R.id.btn_BP,
-            R.id.btn_CA,
-            R.id.btn_ITA,
+            R.id.btn_web,
+            R.id.btn_AI,
+            R.id.btn_CN,
+            R.id.btn_DataMag,
             R.id.btn_DM,
             R.id.btn_NM,
             R.id.btn_FP2,
@@ -43,7 +43,7 @@ public class DashboardFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        // Ánh xạ các view khác
+
         search = view.findViewById(R.id.search);
         btnDownload = view.findViewById(R.id.btn_dowload);
         btnSort = view.findViewById(R.id.btn_sort);
@@ -56,7 +56,7 @@ public class DashboardFragment extends Fragment {
             popupMenu.show();
         });
 
-        // Ánh xạ và set sự kiện click cho tất cả course button
+
         for (int id : courseButtonIds) {
             Button courseBtn = view.findViewById(id);
             courseBtn.setOnClickListener(v -> {
@@ -69,8 +69,5 @@ public class DashboardFragment extends Fragment {
     }
 
     private void openCourseDetail(String courseName) {
-        // Xử lý khi user bấm vào course
-        // Ví dụ: mở Activity khác, hoặc show Toast
-        // Toast.makeText(getContext(), "Clicked: " + courseName, Toast.LENGTH_SHORT).show();
     }
 }
