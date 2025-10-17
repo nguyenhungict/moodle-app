@@ -19,7 +19,6 @@
             android:layout_height="60dp"
             android:background="@color/orange"
             android:drawableLeft="@drawable/back"
-            android:drawableRight="@drawable/menu"
             android:paddingEnd="15dp"
             android:text="Information and Communication Technology"
             android:textAlignment="textStart"

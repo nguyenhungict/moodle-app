@@ -52,44 +52,44 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("USTH Moodle");
         }
 
-        drawerLayout = findViewById(R.id.main);
-        navBar = findViewById(R.id.nav_bar);
-        toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
-        );
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navBar.setNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-            int id = item.getItemId();
-
-            if (id == R.id.nav_grades) {
-                selectedFragment = new GradesFragment();
-            } else if (id == R.id.nav_files) {
-                selectedFragment = new FilesFragment();
-            } else if (id == R.id.nav_badges) {
-                selectedFragment = new BadgesFragment();
-            } else if (id == R.id.nav_preference) {
-                selectedFragment = new PreferenceFragment();
-            } else if (id == R.id.nav_out) {
-                finishAffinity(); // Exit app
-                return true;
-            }
-
-            if (selectedFragment != null) {
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, selectedFragment)
-                        .addToBackStack(null)
-                        .commit();
-            }
-
-            drawerLayout.closeDrawers();
-            return true;
-        });
+//        drawerLayout = findViewById(R.id.main);
+//        navBar = findViewById(R.id.nav_bar);
+//        toggle = new ActionBarDrawerToggle(
+//                this, drawerLayout, toolbar,
+//                R.string.navigation_drawer_open,
+//                R.string.navigation_drawer_close
+//        );
+//        drawerLayout.addDrawerListener(toggle);
+//        toggle.syncState();
+//
+//        navBar.setNavigationItemSelectedListener(item -> {
+//            Fragment selectedFragment = null;
+//            int id = item.getItemId();
+//
+//            if (id == R.id.nav_grades) {
+//                selectedFragment = new GradesFragment();
+//            } else if (id == R.id.nav_files) {
+//                selectedFragment = new FilesFragment();
+//            } else if (id == R.id.nav_badges) {
+//                selectedFragment = new BadgesFragment();
+//            } else if (id == R.id.nav_preference) {
+//                selectedFragment = new PreferenceFragment();
+//            } else if (id == R.id.nav_out) {
+//                finishAffinity(); // Exit app
+//                return true;
+//            }
+//
+//            if (selectedFragment != null) {
+//                getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.fragment_container, selectedFragment)
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+//
+//            drawerLayout.closeDrawers();
+//            return true;
+//        });
 
         // TabLayout + ViewPager2
         tabLayout = findViewById(R.id.tab_layout);
@@ -125,23 +125,24 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (selectedFragment != null) {
+                openFragment(selectedFragment);
                 // Ẩn ViewPager2 + TabLayout, hiển thị fragment riêng
-                viewPager.setVisibility(View.GONE);
-                tabLayout.setVisibility(View.GONE);
-                findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
-
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, selectedFragment)
-                        .commit();
+//                viewPager.setVisibility(View.GONE);
+//                tabLayout.setVisibility(View.GONE);
+//                findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
+//
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragment_container, selectedFragment)
+//                        .commit();
             }
             return true;
         });
 
-        // 👉 Mặc định hiển thị ViewPager
-        viewPager.setVisibility(View.VISIBLE);
-        tabLayout.setVisibility(View.VISIBLE);
-        findViewById(R.id.fragment_container).setVisibility(View.GONE);
-        viewPager.setCurrentItem(0);
+//        // 👉 Mặc định hiển thị ViewPager
+//        viewPager.setVisibility(View.VISIBLE);
+//        tabLayout.setVisibility(View.VISIBLE);
+//        findViewById(R.id.fragment_container).setVisibility(View.GONE);
+//        viewPager.setCurrentItem(0);
 
         // 👉 Bắt sự kiện nút btn_course_list (nằm trong layout nào đó)
         View btnCourseList = findViewById(R.id.btn_course_list);
@@ -159,6 +160,31 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
             });
         }
+
+        String fragmentName = getIntent().getStringExtra("fragment");
+        if (fragmentName != null) {
+            Fragment fragment = null;
+            if ("grades".equals(fragmentName)) {
+                fragment = new GradesFragment();
+            } else if ("files".equals(fragmentName)) {
+                fragment = new FilesFragment();
+            } else if ("badges".equals(fragmentName)) {
+                fragment = new BadgesFragment();
+            } else if ("preference".equals(fragmentName)) {
+                fragment = new PreferenceFragment();
+            }
+
+            if (fragment != null) {
+                openFragment(fragment);
+                return; // skip loading ViewPager
+            }
+        }
+
+        viewPager.setVisibility(View.VISIBLE);
+        tabLayout.setVisibility(View.VISIBLE);
+        findViewById(R.id.fragment_container).setVisibility(View.GONE);
+        viewPager.setCurrentItem(0);
+
     }
 
     @Override
@@ -170,9 +196,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
+//        if (toggle.onOptionsItemSelected(item)) {
+//            return true;
+//        }
 
         if (item.getItemId() == R.id.action_profile) {
             startActivity(new Intent(this, ProfileActivity.class));
@@ -180,6 +206,16 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+            return true;
+        }
+        return super.onSupportNavigateUp();
+    }
+
     public void openFragment(Fragment fragment) {
         // Hide the ViewPager and TabLayout
         if (viewPager != null && tabLayout != null) {

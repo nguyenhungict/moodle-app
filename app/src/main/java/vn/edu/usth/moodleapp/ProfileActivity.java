@@ -32,6 +32,43 @@ public class ProfileActivity extends AppCompatActivity {
             profileUserBtn.setText(username);
         }
 
+        Button  scoreBtn= findViewById(R.id.profile_score);
+        if (scoreBtn != null) {
+            scoreBtn.setOnClickListener(v -> {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("fragment", "grades");
+                startActivity(intent);
+            });
+        }
+
+        Button  filesBtn= findViewById(R.id.profile_files);
+        if (filesBtn != null) {
+            filesBtn.setOnClickListener(v -> {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("fragment", "files");
+                startActivity(intent);
+            });
+        }
+
+        Button  badgesBtn= findViewById(R.id.profile_badges);
+        if (badgesBtn != null) {
+            badgesBtn.setOnClickListener(v -> {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("fragment", "badges");
+                startActivity(intent);
+            });
+        }
+
+        Button  settingsBtn= findViewById(R.id.profile_settings);
+        if (settingsBtn != null) {
+            settingsBtn.setOnClickListener(v -> {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("fragment", "preference");
+                startActivity(intent);
+            });
+        }
+
+
         // Logout -> clear session and go back to LoginActivity
         Button logoutBtn = findViewById(R.id.profile_logout);
         if (logoutBtn != null) {

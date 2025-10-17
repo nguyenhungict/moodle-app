@@ -20,7 +20,6 @@
             android:layout_height="wrap_content"
             android:background="@color/orange"
             android:drawableLeft="@drawable/back"
-            android:drawableRight="@drawable/menu"
             android:paddingEnd="15dp"
             android:text="Bachelor"
             android:textAlignment="textStart"
