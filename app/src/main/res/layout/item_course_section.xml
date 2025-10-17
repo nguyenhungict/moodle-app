@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/card_background"
+    android:layout_margin="8dp"
+    android:padding="16dp">
+
+    <!-- Section Name -->
+    <TextView
+        android:id="@+id/tv_section_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Section Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Section Summary -->
+    <TextView
+        android:id="@+id/tv_section_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Section Summary"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone" />
+
+    <!-- Modules RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_modules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+

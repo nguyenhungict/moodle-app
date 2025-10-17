@@ -25,7 +25,6 @@
             android:name=".Signinup.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.MoodleApp">
-
         </activity>
 
         <activity

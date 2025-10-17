@@ -21,6 +21,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import vn.edu.usth.moodleapp.Courses.CoursesCategoriesFragment;
+import vn.edu.usth.moodleapp.Courses.WebProgrammingFragment;
 import vn.edu.usth.moodleapp.NavBottom.BlogsFragment;
 import vn.edu.usth.moodleapp.NavBottom.CalendarFragment;
 import vn.edu.usth.moodleapp.NavBottom.MoreFragment;
@@ -159,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
             });
         }
+
     }
 
     @Override
