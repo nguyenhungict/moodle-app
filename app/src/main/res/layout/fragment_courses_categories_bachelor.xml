@@ -11,6 +11,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/orange">
 
         <!-- Thanh trên cùng màu cam -->
         <Button
@@ -27,12 +32,13 @@
             android:textSize="16sp"
             app:iconPadding="15dp" />
 
+        </RelativeLayout>
         <!-- Tiêu đề -->
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/back"
+            android:layout_below="@id/header_layout"
             android:text="Course categories/ Bachelor"
             android:layout_marginStart="10dp"
             android:textSize="21sp"

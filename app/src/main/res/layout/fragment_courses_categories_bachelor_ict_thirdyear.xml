@@ -11,9 +11,8 @@
         android:layout_height="wrap_content">
 
         <!-- Header -->
-        <Button
-            style="@style/OrangeButton"
-            android:id="@+id/back_third_year"
+        <RelativeLayout
+            android:id="@+id/header_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/orange"
@@ -29,7 +28,7 @@
             android:id="@+id/textView_third_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/back_third_year"
+            android:layout_below="@id/header_layout"
             android:text="Course categories / Bachelor / ICT / Third Year"
             android:layout_marginStart="10dp"
             android:textSize="21sp"
@@ -54,8 +53,7 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:clickable="true"
-            android:focusable="true"
-            />
+            android:focusable="true" />
 
         <Button
             android:id="@+id/course_web"

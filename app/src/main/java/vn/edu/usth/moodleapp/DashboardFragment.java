@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +23,7 @@ public class DashboardFragment extends Fragment {
 
     // Danh sách ID các button course
     private final int[] courseButtonIds = {
-            R.id.btn_cal2,
+            R.id.btn_mobile,
             R.id.btn_ITI,
             R.id.btn_BP,
             R.id.btn_CA,
@@ -48,6 +49,12 @@ public class DashboardFragment extends Fragment {
         btnSort = view.findViewById(R.id.btn_sort);
         btnGrid = view.findViewById(R.id.btn_grid);
         btnProgress = view.findViewById(R.id.btn_progress);
+
+        btnProgress.setOnClickListener(v -> {
+            PopupMenu popupMenu = new PopupMenu(requireContext(), v);
+            popupMenu.getMenuInflater().inflate(R.menu.filter_status, popupMenu.getMenu());
+            popupMenu.show();
+        });
 
         // Ánh xạ và set sự kiện click cho tất cả course button
         for (int id : courseButtonIds) {
