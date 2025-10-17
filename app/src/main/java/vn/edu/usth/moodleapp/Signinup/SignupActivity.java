@@ -28,7 +28,7 @@ public class SignupActivity extends AppCompatActivity {
     private MoodleVolleyClient volleyClient;
 
     // ⚠️ Thay bằng token của external service có quyền core_user_create_users
-    private static final String ADMIN_TOKEN = "6264b2687b9ad7b8833dcdf95af50c44";
+    private static final String ADMIN_TOKEN = "986624f3530e6493486ae5ec3956aed3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -45,6 +45,16 @@ public class ThirdYearFragment extends Fragment {
             //         .commit();
         });
 
+        // Nút "Web Programming"
+        Button webBtn = view.findViewById(R.id.course_web);
+        webBtn.setOnClickListener(v -> {
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new WebProgrammingFragment())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
         return view;
     }
 }
